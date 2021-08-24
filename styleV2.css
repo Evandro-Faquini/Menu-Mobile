@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+}
+
+/* MOBILE FIRST*/
+
+body{
+    padding: 15px;
+    background-color:#026ddc;
+    background-image:linear-gradient(to bottom, #006EDB, #0F91CB, #15AABE, #17BFB4);
+    background-repeat: no-repeat;
+    color: white;
+    height: 100vh;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 2px;
+    padding-bottom: 20px;
+}
+
+/*FLEX Container*/
+
+.icone-box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.label-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 0px 10px 0px 10px;
+    
+}
+
+.label-box i{
+    font-size: 1.5rem;
+}
+
+#btn-abre{
+    position: fixed;
+    top: calc(50% - 30px);
+    left: 0;
+    z-index: 1;
+    background-color: #00014B;
+    border: 1px solid #00014B; 
+}
+
+#btn-fecha{
+    position: fixed;
+    right: -100px;
+    z-index: 3;
+    background-color:#005A83;
+    border: 1px solid #005A83;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: -100vh;
+    z-index: 2;
+    width: 80vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gill Sans', sans-serif;
+    background-color: white;
+    color: #8E8E8E;
+    opacity:  0;
+    transition: left 0.5s, opacity 0.7s;
+}
+nav ul{
+    width: 70%;
+    height: 50%;
+}
+
+nav ul li {
+    padding: 15px 10px;
+    margin-bottom: 20px;
+    border-left: 2px dotted #005a83;
+    list-style: none;
+    font-size: 1.2rem;
+    color: grey;
+    cursor: pointer;
+}
+nav ul li:hover {
+    color: #005a83;
+    border-bottom: none;
+}
+
+
+/*checkbox*/
+
+#abre-fecha{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+
+#abre-fecha:checked ~ nav {
+    left: 0;
+    opacity: 1;
+}
+
+#abre-fecha:checked~#btn-fecha {
+    right: calc(20% + 10px);
+    transition: 0.5s;
+}
+/* TABLET 768px */
+
+@media screen and ( min-width: 768px) {
+    h1 {
+        text-align: center;
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+    }
+    p { 
+        font-size: 1.5rem;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    
+    
+    .label-box {
+        
+        width: 90px;
+        height: 90px;
+    }
+    #btn-abre {
+        top: calc( 50% - 45px );
+    }
+    .label-box i {
+        font-size: 2.5rem;
+    }
+
+    nav ul li {
+        padding: 15px 25px;
+        margin-bottom: 20px;
+        font-size: 2.2rem;
+        cursor: pointer;
+    }
+    nav ul li:hover {
+        color: #005a83;
+        border-bottom: none;
+    }
+}
+
+/* DESKTOP 992px */
+
+@media screen and ( min-width: 992px) {
+    body {
+        padding:0;
+    }
+    .label-box { display: none; }
+    
+    nav {
+        position: static;
+        opacity: 1;
+        width: 100%;
+        height: auto;
+    }
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+    nav ul li {
+        font-size: 1.5rem;
+        border-left: none;
+        border-bottom: 1px dotted #005a83;
+        cursor: pointer;
+        color: #8E8E8E;
+
+    }
+
+    nav ul li:hover {
+        color: #005a83;
+        border-bottom: none;
+    }
+
+}
+/* TELAS LARGAS */
+
+@media screen and (min-width: 1200px) {}
+
+p{
+    text-align: justify;
+    justify-content: center;
+}
